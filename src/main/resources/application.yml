@@ -15,3 +15,5 @@ spring:  profiles:    active:    - default #native for local files  cloud: 
 #              search-paths:
 #                - github-demo-config
 #                - conversion-service # GET to localhost:9000/EURUSD/perf
+  security: # new version of security.basic, disabling security through application.yml - is deprecated in 2.0    user:      name: alozta
+      password: alozta
