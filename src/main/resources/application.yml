@@ -1,6 +1,16 @@
+---
 server:
   port: 9000
-
-# Looks for configurations files in local
-spring:  profiles:    active:    - native
-
+spring:  profiles:    active:    - default #native for local files  cloud:    config:      server:        git:          uri: https://github.com/alozta2/ms-config-server-config
+          #for private repos
+          #username: username
+          #password: password
+          search-paths:          - github-demo-config # GET to localhost:9000/githubdemo/howdy
+          - conversion-service # GET to localhost:9000/EURUSD/default
+#          repos: # You can add another repositories#            perf:
+#              pattern:
+#                - "*/perf"
+#              uri: https://github.com/alozta2/ms-config-server-config
+#              search-paths:
+#                - github-demo-config
+#                - conversion-service # GET to localhost:9000/EURUSD/perf
